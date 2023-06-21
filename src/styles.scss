@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "primeicons/primeicons.css";
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  font-family: 'Spectral SC', serif!important;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.temptress {
+  background-color: #411D31!important;
+}
+
+
+

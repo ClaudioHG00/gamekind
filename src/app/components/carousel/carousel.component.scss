@@ -1,0 +1,23 @@
+.carousel {
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 4rem!important;
+    height: 4rem!important;
+  }
+
+  .carousel-caption {
+    padding-bottom: 45%;
+    bottom: 6.25rem!important;
+    h3 {
+      font-family: 'Spectral SC', serif!important;
+      font-size: 50px;
+      text-shadow: black 5px 4px 5px;
+      color: white;
+    }
+  }
+
+  .last-photo{
+    text-shadow: black 3px 2px 3px;
+    color: white;
+  }
+}
