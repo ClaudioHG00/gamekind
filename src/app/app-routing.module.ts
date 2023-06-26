@@ -1,10 +1,25 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { HomeComponent } from './components/home/home.component';
+import { GamesComponent } from './components/games/games.component';
+import { ErrorComponent } from './components/error/error.component';
+import { DetailComponent } from './components/games/detail/detail.component';
+import { GamesListComponent } from './components/games/games-list/games-list.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
+  { path: 'games', component: GamesComponent, children: [
+    { path: 'detail/:title/:_id', component: DetailComponent},
+    { path: '', component: GamesListComponent, pathMatch:'full'},
+  ]},
+  { path: 'error404', component: ErrorComponent},
+  { path: '**', redirectTo: 'error404', pathMatch: 'full'}
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration:'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,0 +1,11 @@
+@import '../../../../styles/fonts.scss';
+
+h1 {
+  font-family: $primary-font-tech!important;
+  font-size: 45px;
+  text-align: center;
+  text-shadow: black 4px 4px 3px;
+  color: white;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}

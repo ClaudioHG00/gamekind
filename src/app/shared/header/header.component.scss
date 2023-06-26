@@ -1,3 +1,6 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/fonts.scss";
+
 header{
 
   .logo{
@@ -7,23 +10,22 @@ header{
   }
 
   .tab {
-    font-family: 'Spectral SC', serif!important;
+    font-family: $primary-font-spectral!important;
     font-size: 28px;
     margin-left: 24px;
     color: white;
-    text-shadow: black 4px 3px 4px;
   }
 
   .title {
-    font-family: 'Press Start 2P', cursive;
+    font-family: $primary-font-start2p;
     font-size: 65px!important;
     text-shadow: black 6px 5px 6px;
     color: white;
     margin-right: 480px;
   }
 
-  .temptress {
-    background-color: #411d31!important;
+  .bg-color {
+    background-color: $primary-color-temptress!important;
   }
 
 }

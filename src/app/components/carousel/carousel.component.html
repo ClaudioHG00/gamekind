@@ -1,15 +1,30 @@
-<ngb-carousel *ngIf="images.length > 1; else noSlide">
-  <ng-template ngbSlide *ngFor="let image of images; let i = index">
-    <div class="picsum-img-wrapper">
-      <img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
-    </div>
-    <div class="carousel-caption">
-      <h3>{{image.label}}</h3>
-      <h6 class="last-photo" *ngIf="i === images.length - 1">Stai visualizzando l'ultima foto</h6>
-    </div>
-  </ng-template>
-</ngb-carousel>
+<div id="carousel" *ngIf="images.length > 1 && games === undefined">
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let image of images; let i = index">
+      <div class="picsum-img-wrapper">
+        <div class="image" [ngStyle]="{'background-image':'url(' + percorso + image.id + '.jpg)'}"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3>{{image.label}}</h3>
+        <h6 class="last-photo" *ngIf="i === images.length - 1">Stai visualizzando l'ultima foto</h6>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
 
-<ng-template #noSlide>
+<div id="carousel-sec" *ngIf="games !== undefined">
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let game of games">
+      <div class="carousel-slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>{{game.title}}</h3>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+
+<ng-template *ngIf="images.length === 1 && games === undefined">
   <img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
 </ng-template>

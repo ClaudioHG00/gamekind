@@ -1,0 +1,28 @@
+<div class="bg-color">
+  <div *ngIf="game">
+    <div
+      class="image"
+      [ngStyle]="{ 'background-image': 'url(' + game.image + ')' }"
+    ></div>
+
+    <div class="contenitore">
+      <h2>{{ game.title }}</h2>
+      <div>
+        <div class="tag">
+        <h5>Genre: {{ game.genre }}</h5>
+        <h5>Multiplayer: {{ game.multiplayer }}</h5>
+        <h5>Developer: {{ game.developer }}</h5>
+        </div>
+        <div class="paragrafo">
+          <p>{{ game.description }}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div *ngIf="game === undefined || !game">
+      We're sorry, the game is no longer categorized on this page!
+    </div>
+  </div>
+</div>

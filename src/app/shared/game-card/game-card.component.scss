@@ -1,0 +1,45 @@
+@import "../../../styles/colors.scss";
+
+.container-card {
+  display: block;
+  float: left;
+  width: 44%;
+  margin-left: 4%;
+  margin-bottom: 30px;
+  .card {
+    background-color: black;
+    color: white;
+    .card-image {
+      height: 500px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .card-body{
+      .card-title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 22px;
+        color: white;
+        margin-bottom: 2vh;
+        text-shadow: $primary-color-temptress 4px 4px 3px;
+      }
+
+      .card-text {
+        text-align: justify;
+        overflow-y: auto;
+      }
+
+      .btn.btn-primary {
+        font-size: 16px;
+        background-color: $primary-color-temptress;
+        border: none;
+        margin: auto;
+        display: block;
+        font-weight: 700;
+        padding: 13px;
+      }
+    }
+  }
+}

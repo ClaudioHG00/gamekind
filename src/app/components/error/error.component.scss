@@ -1,0 +1,29 @@
+.error-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.error-caption {
+  position: absolute;
+  top: 30vh;
+  right: 6%;
+  color: white;
+
+  h1 {
+    font-size: 70px;
+    text-shadow:black 4px 3px 4px;
+    padding-bottom: 5vh;
+  }
+
+  h3 {
+    font-size: 35px;
+    text-shadow:black 4px 3px 4px;
+    padding-bottom: 5vh;
+  }
+
+  p {
+    font-size: 18px;
+    text-shadow:black 3px 3px 3px;
+  }
+}
