@@ -11,21 +11,27 @@ header{
 
   .tab {
     font-family: $primary-font-spectral!important;
-    font-size: 28px;
-    margin-left: 24px;
+    font-size: 22px;
     color: white;
+    text-align: right;
   }
+
 
   .title {
     font-family: $primary-font-start2p;
     font-size: 65px!important;
     text-shadow: black 6px 5px 6px;
     color: white;
-    margin-right: 480px;
+    text-align: left;
+    margin-right: 20%;
   }
 
   .bg-color {
-    background-color: $primary-color-temptress!important;
+    background-color: $primary-color-tamarind!important;
+  }
+
+  .bg-color2 {
+    background-color: $primary-color-gondola!important;
   }
 
 }

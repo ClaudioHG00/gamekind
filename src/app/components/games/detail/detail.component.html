@@ -6,14 +6,16 @@
     ></div>
 
     <div class="contenitore">
-      <h2>{{ game.title }}</h2>
+      <div>
+        <h2>{{ game.title | uppercase}} </h2>
+      </div>
       <div>
         <div class="tag">
-        <h5>Genre: {{ game.genre }}</h5>
-        <h5>Multiplayer: {{ game.multiplayer }}</h5>
-        <h5>Developer: {{ game.developer }}</h5>
+        <h5>GENRE: {{ game.genre }}</h5>
+        <h5>MULTIPLAYER: {{ game.multiplayer }}</h5>
+        <h5>DEVELOPER: {{ game.developer }}</h5>
         </div>
-        <div class="paragrafo">
+        <div>
           <p>{{ game.description }}</p>
         </div>
 

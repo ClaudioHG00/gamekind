@@ -9,34 +9,32 @@
 
 .contenitore {
   color: white;
-  padding-right: 3%;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
 
   h2 {
-    text-align: left;
-    padding-top: 2vh;
-    padding-left: 19%;
+    text-align: center;
+    padding-right: 30%;
+    padding-bottom: 3vh;
     font-family: $primary-font-tech;
-    font-size: 50px;
-  }
-  .tag {
-    h5 {
-      position:relative;
-      padding-bottom: 1vh;
-      text-align: right;
-      font-weight: bold;
-      margin-top: -0.5vh;
-    }
+    text-shadow: black 3px 3px 3px;
+    font-size: 40px;
   }
 
-  .paragrafo {
-    p {
-      position: relative;
-      margin-top: -10vh;
-      text-align: left;
-      padding-right: 40%;
-      padding-left: 7%;
-    }
+  h5 {
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 0px;
+    padding-left: 5%;
   }
 
+
+  p {
+    padding-right: 30%;
+    margin-top: -10vh;
+    text-align: left;
+  }
 
 }
