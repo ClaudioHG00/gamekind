@@ -14,6 +14,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { GameCardComponent } from './shared/game-card/game-card.component';
 import { GamesListComponent } from './components/games/games-list/games-list.component';
 import { DetailComponent } from './components/games/detail/detail.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DetailComponent } from './components/games/detail/detail.component';
     ErrorComponent,
     GameCardComponent,
     GamesListComponent,
-    DetailComponent
+    DetailComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
