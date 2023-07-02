@@ -1,22 +1,44 @@
+@import '../../../styles/colors.scss';
+
 footer {
   color: white;
   height: 200px;
-  padding: 10px;
   width: 100%;
 
   .tab {
     text-align: right;
     size: 200%;
+    padding: 10px;
   }
 
   .navbar-nav {
-    text-align: right;
     flex-direction: row!important;
-    margin-left: 90%;
+    margin-left: 79%;
     margin-top: 12vh;
     .nav-item {
       padding-left: 10%;
-      ////////////////////////////////////////////////
+    }
+    .pi {
+      font-size: 40px;
+    }
+  }
+
+  .logo {
+    size: 50%;
+  }
+
+  .border {
+    padding-top: 0px!important;
+    background-color: $primary-color-temptress!important;
+    border-color: black!important;
+    border-width: 3.5px!important;
+    .image {
+      height: 3vh;
+      width: 100%;
+      background-image: url('../../../assets/images/border2.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 

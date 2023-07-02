@@ -34,4 +34,18 @@ header{
     background-color: $primary-color-gondola!important;
   }
 
+  .border {
+    background-color: $primary-color-temptress!important;
+    border-color: black!important;
+    border-width: 3.5px!important;
+    .image {
+      height: 3vh;
+      width: 100%;
+      background-image: url('../../../assets/images/border2.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
 }
