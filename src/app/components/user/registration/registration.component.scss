@@ -1,0 +1,51 @@
+@import '../../../../styles/colors.scss';
+
+.contenitore {
+  border-radius: 25px;
+    width: 75%;
+    margin: 20px auto;
+    border: 2px solid black;
+    padding: 0!important;
+    color: white;
+
+    .colonna-dx {
+      background-image: url('../../../../assets/images/imageError-404.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 0px 25px 25px 0px;
+    }
+
+    a {
+      color: rgb(161, 161, 161);
+      text-decoration: none;
+  }
+
+  .btn.btn-primary {
+    background: #8e210b;
+    border: 1px solid #8e210b;
+    margin-left: 0px;
+  }
+}
+
+
+.mat-icon {
+  position: relative;
+  top: 6px;
+}
+
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+
+input.ng-valid.ng-touched {
+  border: 1px solid rgb(55, 163, 40);
+}
+.is-danger {
+  font-size: 11px;
+    color: white;
+    text-align: right;
+    margin-top: -17px;
+    font-weight: 900;
+}

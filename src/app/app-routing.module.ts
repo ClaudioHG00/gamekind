@@ -6,6 +6,7 @@ import { GamesComponent } from './components/games/games.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/games/detail/detail.component';
 import { GamesListComponent } from './components/games/games-list/games-list.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'detail/:title/:_id', component: DetailComponent},
     { path: '', component: GamesListComponent, pathMatch:'full'},
   ]},
+  { path: 'registration', component: RegistrationComponent},
   { path: 'error404', component: ErrorComponent},
   { path: '**', redirectTo: 'error404', pathMatch: 'full'}
 ];

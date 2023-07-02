@@ -1,1 +1,81 @@
-<p>registration works!</p>
+<div class="row contenitore" style="border-radius: 25px;">
+  <div class="col-xl-5 order-2 order-lg-1">
+
+    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign Up</p>
+
+    <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-user" ></i>
+          <input placeholder="name" type="text" id="name" name="name" formControlName="name"  class="form-control"/>
+          <label class="form-label" for="name">Your name</label>
+          <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">The name field is required.</p>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-envelope" ></i>
+          <input placeholder="email" type="email" id="email" name="email"  formControlName="email" class="form-control"/>
+          <label class="form-label" for="email">Your email</label>
+          <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.controls.email.touched">The email field is required.</p>
+          <p class="help is-danger" *ngIf="form.controls.email.hasError('email') && form.controls.email.touched">The email field must contain a valid email.</p>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-lock" ></i>
+         <!-- <input placeholder="password" type="password" id="password" name="password" formControlName="password" class="form-control"  /> -->
+
+          <p-password name="password" formControlName="password" class="form-control" [toggleMask]="true" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+
+            <ng-template pTemplate="header">
+              <h6>Write a password</h6>
+            </ng-template>
+            <ng-template pTemplate="footer">
+              <p-divider></p-divider>
+              <p>Suggestions</p>
+              <ul style="line-height: 1.5;">
+                <li>a lowercase letter</li>
+                <li>an uppercase letter</li>
+                <li>a number</li>
+                <li>minimum 8 characters and maximum 16</li>
+              </ul>
+            </ng-template>
+          </p-password>
+
+          <label class="form-label" for="password">Password</label>
+          <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern') && form.controls.password.touched">The password field must contain at least 1 uppercase, 1 lowercase, 1 number, 1 special character and 8 characters</p>
+          <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && form.controls.password.touched">The password field is required</p>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-key" ></i>
+          <input type="password" id="ripetiPassword" name="ripetiPassword" formControlName="ripetiPassword" class="form-control" (ngModelChange)="convalidaPassword()"/>
+          <label class="form-label" for="ripetiPassword">Repeat password</label>
+          <p class="help is-danger" *ngIf="!convalidaPassword() && form.get('ripetiPassword').dirty">The entered password does not match</p>
+        </div>
+      </div>
+
+      <div class="form-check d-flex justify-content-center mb-5">
+        <input class="form-check-input me-2" type="checkbox" value="" id="accetto" formControlName="accetto" name="accetto" />
+        <label class="form-check-label" for="accetto">
+          I declare that I accept the <a>Terms of service</a>
+        </label>
+      </div>
+
+
+      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Sign Up</button>
+      </div>
+
+    </form>
+
+  </div>
+  <div class=" col-xl-7  order-1 order-lg-2 colonna-dx">
+
+  </div>
+</div>
