@@ -8,6 +8,9 @@ import { Game } from 'src/app/models/game.model';
 })
 export class GameCardComponent {
 
+  page = 1;
+  gamesPerPagina = 4;
+
   @Input() games: Game[];
 
   accorciaTesto(descrizione): number {
@@ -18,5 +21,10 @@ export class GameCardComponent {
       let ultimoSpazio = descrizione.lastIndexOf(' ', lunghezzaMassima);
       return ultimoSpazio;
     }
+  }
+
+  onPageChange(e) {
+    e.page = e.page + 1;
+    this.page = e.page;
   }
 }

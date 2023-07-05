@@ -1,4 +1,8 @@
-<div class="container-card" *ngFor="let game of games">
+<div class="paginatore">
+  <p-paginator (onPageChange)="onPageChange($event)" [rows]="gamesPerPagina" [totalRecords]="games.length"></p-paginator>
+</div>
+
+<div class="container-card" *ngFor="let game of games | slice: (page * gamesPerPagina) - gamesPerPagina: page * gamesPerPagina">
   <div class="card">
     <div class="card-image" [ngStyle]="{'background-image': 'url(' + game.image + ')'}"></div>
     <div class="card-body">
@@ -10,3 +14,4 @@
     </div>
   </div>
 </div>
+

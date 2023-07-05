@@ -4,6 +4,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule} from 'primeng/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginatorModule } from 'primeng/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { RegistrationComponent } from './components/user/registration/registrati
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
+    PaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -116,3 +116,16 @@ footer {
 }
 
 
+.paginatore {
+  margin-bottom: 30px;
+  .p-paginator {
+    background-color: black;
+    .p-paginator-pages .p-paginator-page.p-highlight {
+      background-color: #361125;
+      color: white;
+    }
+    .pi {
+      color: white;
+    }
+  }
+}
