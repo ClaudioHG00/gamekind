@@ -1,0 +1,17 @@
+@import '../../../styles/colors.scss';
+
+.border {
+  clear: both;
+  padding-top: 0px!important;
+  background-color: $primary-color-gondola-darker!important;
+  border-color: black!important;
+  border-width: 3.5px!important;
+  .image {
+    height: 2.5vh;
+    width: 100%;
+    background-image: url('../../../assets/images/border3.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+}

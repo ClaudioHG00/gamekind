@@ -21,6 +21,7 @@ import { GamesListComponent } from './components/games/games-list/games-list.com
 import { DetailComponent } from './components/games/detail/detail.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { NewGameComponent } from './components/new-game/new-game.component';
+import { BorderComponent } from './shared/border/border.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NewGameComponent } from './components/new-game/new-game.component';
     GamesListComponent,
     DetailComponent,
     RegistrationComponent,
-    NewGameComponent
+    NewGameComponent,
+    BorderComponent
   ],
   imports: [
     BrowserModule,

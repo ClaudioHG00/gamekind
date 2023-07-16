@@ -11,7 +11,7 @@
 
 body {
   font-family: $primary-font-montserrat!important;
-  background-color: $primary-color-temptress!important;
+  background-color: $primary-color-tamarind!important;
 }
 
 h1 {
@@ -19,7 +19,7 @@ h1 {
 }
 
 .bg-color {
-  background-color: $primary-color-temptress!important;
+  background-color: $primary-color-tamarind!important;
 }
 
 .bg-color2 {
@@ -31,7 +31,6 @@ h1 {
   padding: 20px;
 
   h2 {
-    font-weight: bold;
     font-size: 35px;
   }
 
@@ -117,7 +116,7 @@ footer {
 
 
 .paginatore {
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   .p-paginator {
     background-color: black;
     .p-paginator-pages .p-paginator-page.p-highlight {
@@ -128,4 +127,12 @@ footer {
       color: white;
     }
   }
+}
+
+.divisore {
+  height: 30px;
+}
+
+span {
+  color: black;
 }

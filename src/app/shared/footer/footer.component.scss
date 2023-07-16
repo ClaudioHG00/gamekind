@@ -5,41 +5,22 @@ footer {
   height: 200px;
   width: 100%;
 
-  .tab {
-    text-align: right;
-    size: 200%;
-    padding: 10px;
-  }
-
   .navbar-nav {
-    flex-direction: row!important;
-    margin-left: 79%;
-    margin-top: 12vh;
-    .nav-item {
-      padding-left: 10%;
-    }
+    padding-top: 1vh!important;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-end;
+    align-items: flex-end;
+
     .pi {
-      font-size: 40px;
+      font-size: 27px!important;
     }
   }
 
   .logo {
     size: 50%;
-  }
-
-  .border {
-    padding-top: 0px!important;
-    background-color: $primary-color-temptress!important;
-    border-color: black!important;
-    border-width: 3.5px!important;
-    .image {
-      height: 3vh;
-      width: 100%;
-      background-image: url('../../../assets/images/border2.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
   }
 
 }

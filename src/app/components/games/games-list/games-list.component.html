@@ -1,9 +1,6 @@
-<div>
 
-  <h1>Popular Games</h1>
+<app-game-card [games]="games" [pagina]="'games'"></app-game-card>
 
-  <app-game-card [games]="games"></app-game-card>
+<app-border></app-border>
+<app-carousel [games]="games" [pagina]="'games'"></app-carousel>
 
-  <app-carousel [games]="games"></app-carousel>
-
-</div>

@@ -1,17 +1,32 @@
-<div class="paginatore">
-  <p-paginator (onPageChange)="onPageChange($event)" [rows]="gamesPerPagina" [totalRecords]="games.length"></p-paginator>
-</div>
-
-<div class="container-card" *ngFor="let game of games | slice: (page * gamesPerPagina) - gamesPerPagina: page * gamesPerPagina">
-  <div class="card">
-    <div class="card-image" [ngStyle]="{'background-image': 'url(' + game.image + ')'}"></div>
-    <div class="card-body">
-      <h5 class="card-title">{{game.title | uppercase}}</h5>
-      <p class="card-text">{{game.description | slice: 0:accorciaTesto(game.description)}}...</p>
-
-      <a routerLink="/games/detail/{{game.title}}/{{game._id}}" class="btn btn-primary">View</a>
-
+<div *ngIf="pagina === 'games'">
+  <div class="paginatore">
+    <p-paginator (onPageChange)="onPageChange($event)" [rows]="gamesPerPagina" [totalRecords]="games.length"></p-paginator>
+  </div>
+  <app-border></app-border>
+<div class="divisore"></div>
+  <div class="container-card" *ngFor="let game of games | slice: (page * gamesPerPagina) - gamesPerPagina: page * gamesPerPagina">
+    <div class="card">
+      <div class="card-image" [ngStyle]="{'background-image': 'url(' + game.image + ')'}"></div>
+      <div class="card-body">
+        <h5 class="card-title">{{game.title | uppercase}}</h5>
+        <p class="card-text">{{game.description | slice: 0:accorciaTesto(game.description)}}...</p>
+        <a routerLink="/games/detail/{{game.title}}/{{game._id}}" class="btn btn-primary">View</a>
+      </div>
     </div>
   </div>
+</div>
+
+<div *ngIf="pagina === 'home'">
+  <!-- <h2>Last Added Games</h2> -->
+    <div class="container-card" *ngFor="let game of games | slice: -3">
+      <div class="card">
+        <div class="card-image" [ngStyle]="{'background-image': 'url(' + game.image + ')'}"></div>
+        <div class="card-body">
+          <h5 class="card-title">{{game.title | uppercase}}</h5>
+          <p class="card-text">{{game.description | slice: 0:accorciaTesto(game.description)}}...</p>
+          <a routerLink="/games/detail/{{game.title}}/{{game._id}}" class="btn btn-primary">View</a>
+        </div>
+      </div>
+    </div>
 </div>
 

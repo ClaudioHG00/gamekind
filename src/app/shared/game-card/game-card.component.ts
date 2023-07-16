@@ -9,8 +9,9 @@ import { Game } from 'src/app/models/game.model';
 export class GameCardComponent {
 
   page = 1;
-  gamesPerPagina = 4;
+  gamesPerPagina = 6;
 
+  @Input() pagina;
   @Input() games: Game[];
 
   accorciaTesto(descrizione): number {

@@ -4,23 +4,21 @@
       class="image"
       [ngStyle]="{ 'background-image': 'url(' + game.image + ')' }"
     ></div>
+    <app-border></app-border>
 
     <div class="contenitore">
-      <div>
+      <div class="paragrafo">
         <h2>{{ game.title | uppercase}} </h2>
+        <hr>
+        <p>{{ game.description }}</p>
       </div>
-      <div>
+      <div class="divisore"></div>
         <div class="tag">
-        <h5>GENRE: {{ game.genre }}</h5>
-        <h5>MULTIPLAYER: {{ game.multiplayer }}</h5>
-        <h5>DEVELOPER: {{ game.developer }}</h5>
+          <h5><span>[</span> Genre:     <strong>{{ game.genre }} </strong><span>]</span></h5>
+          <h5><span>[</span> Developer:     <strong>{{ game.developer }} </strong><span>]</span></h5>
+          <h5><span>[</span> Multiplayer:     <strong>{{ game.multiplayer.toString() | uppercase}} </strong><span>]</span></h5>
         </div>
-        <div>
-          <p>{{ game.description }}</p>
-        </div>
-
-      </div>
-
+        <button type="button" class="btn btn-primary">BACK</button>
     </div>
 
     <div *ngIf="game === undefined || !game">

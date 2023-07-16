@@ -10,13 +10,15 @@ export class CarouselComponent implements OnInit {
 
   percorso = '../../../assets/images/imageBg-';
 
+  @Input() pagina;
+
   images = [
+    {id: 26, label: 'Resident Evil'},
+    {id: 14, label: 'The Elder Scrolls V: Skyrim'},
+    {id: 23, label: 'Outer Wilds'},
     {id: 1, label: 'League of Legends'},
-    {id: 2, label: 'Minecraft'},
-    {id: 3, label: 'World of Warcraft'},
     {id: 4, label: 'Guild Wars 2'},
-    {id: 5, label: 'Lost Ark'},
-    {id: 6, label: 'Dota 2'},
+    {id: 13, label: 'Horizon Zero Dawn'},
   ];
 
   @Input() games: Game[];

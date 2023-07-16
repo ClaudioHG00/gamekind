@@ -1,4 +1,4 @@
-<div id="carousel" *ngIf="images.length > 1 && games === undefined">
+<div id="carousel" *ngIf="images.length > 1 && pagina === 'home';">
   <ngb-carousel>
     <ng-template ngbSlide *ngFor="let image of images; let i = index">
       <div class="picsum-img-wrapper">
@@ -6,13 +6,17 @@
       </div>
       <div class="carousel-caption">
         <h3>{{image.label}}</h3>
-        <h6 class="last-photo" *ngIf="i === images.length - 1">Stai visualizzando l'ultima foto</h6>
+        <h6 class="last-photo" *ngIf="i === images.length - 1">You are viewing the latest photo</h6>
       </div>
     </ng-template>
   </ngb-carousel>
 </div>
 
-<div id="carousel-sec" *ngIf="games !== undefined">
+<ng-template *ngIf="images.length === 1 && pagina === 'home';">
+  <img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
+</ng-template>
+
+<div id="carousel-sec" *ngIf="games && pagina === 'games';">
   <ngb-carousel>
     <ng-template ngbSlide *ngFor="let game of games">
       <div class="carousel-slide">
@@ -25,6 +29,3 @@
 </div>
 
 
-<ng-template *ngIf="images.length === 1 && games === undefined">
-  <img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
-</ng-template>
