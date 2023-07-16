@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PrimeNGConfig } from 'primeng/api';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-registration',
@@ -19,7 +20,10 @@ export class RegistrationComponent {
     accetto: new FormControl(false, Validators.requiredTrue)
   })
 
-  constructor(private config: PrimeNGConfig) {}
+  constructor(
+    private config: PrimeNGConfig,
+    private modalService: NgbModal,
+    ) {}
 
   ngOnInit(): void {
     this.config.setTranslation({
@@ -44,6 +48,16 @@ export class RegistrationComponent {
     } else {
       return false;
     }
+  }
+
+  open(content: any) {
+
+    this.modalService.open(content, {ariaLabelledBy: 'modale privacy', size: 'lg', centered: true}).result
+    .then((res) => {
+      console.log('Azione da eseguire in caso positivo')
+    }).catch((res) => {
+      console.log('Nessuna azione da eseguire')
+    })
   }
 
 }
