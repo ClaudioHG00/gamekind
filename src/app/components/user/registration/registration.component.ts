@@ -21,18 +21,18 @@ export class RegistrationComponent {
   })
 
   constructor(
-    private config: PrimeNGConfig,
+    // private config: PrimeNGConfig,
     private modalService: NgbModal,
     ) {}
 
   ngOnInit(): void {
-    this.config.setTranslation({
-      weak: 'weak',
-      medium: 'medium',
-      strong: 'strong',
-      accept: 'accept',
-      passwordPrompt: 'Write a password',
-    })
+    // this.config.setTranslation({
+    //   weak: 'weak',
+    //   medium: 'medium',
+    //   strong: 'strong',
+    //   accept: 'accept',
+    //   passwordPrompt: 'Write a password',
+    // })
   }
 
   onSubmit(){
@@ -51,13 +51,23 @@ export class RegistrationComponent {
   }
 
   open(content: any) {
-
     this.modalService.open(content, {ariaLabelledBy: 'modale privacy', size: 'lg', centered: true}).result
     .then((res) => {
-      console.log('Azione da eseguire in caso positivo')
+      // console.log('Azione da eseguire in caso positivo')
+      this.aggiornaAccetto();
     }).catch((res) => {
-      console.log('Nessuna azione da eseguire')
+      // console.log('Nessuna azione da eseguire')
+      this.rifiutaAccetto();
     })
   }
+
+  aggiornaAccetto() {
+    this.form.controls.accetto.setValue(true); // Imposta il valore di 'accetto' su true
+  }
+
+  rifiutaAccetto() {
+    this.form.controls.accetto.setValue(false);
+  }
+
 
 }

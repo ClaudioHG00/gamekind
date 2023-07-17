@@ -8,6 +8,7 @@ import { DetailComponent } from './components/games/detail/detail.component';
 import { GamesListComponent } from './components/games/games-list/games-list.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { NewGameComponent } from './components/new-game/new-game.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'new-game', component: NewGameComponent},
     { path: '', component: GamesListComponent, pathMatch:'full'},
   ]},
+  { path: 'login', component: LoginComponent},
   { path: 'registration', component: RegistrationComponent},
   { path: 'error404', component: ErrorComponent},
   { path: '**', redirectTo: 'error404', pathMatch: 'full'}

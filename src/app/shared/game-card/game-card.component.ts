@@ -15,7 +15,7 @@ export class GameCardComponent {
   @Input() games: Game[];
 
   accorciaTesto(descrizione): number {
-    let lunghezzaMassima = 280;
+    let lunghezzaMassima = 260;
     if(descrizione.length <= lunghezzaMassima) {
       return lunghezzaMassima;
     } else {

@@ -17,11 +17,15 @@ header{
     text-transform: uppercase;
   }
 
-  .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-    justify-content: flex-end;
+  @media screen and (min-width: 992px){
+
+    .navbar-expand-lg .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+      justify-content: flex-end;
+    }
   }
+
 
   .navbar-toggler {
     background-color: white;
@@ -37,15 +41,28 @@ header{
     text-transform: uppercase;
   }
 
-  @media screen and (max-width: $text-shrink-breakpoint) {
+
+  @media screen and (max-width: 594px) {
     .title {
-      font-size: $font-size-title-base * $text-shrink-factor;
+      font-size: $font-size-title-base * 0.7;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .title {
+      font-size: $font-size-title-base * 0.6;
+    }
+    .logo {
+      width: 60px;
     }
   }
 
   @media screen and (max-width: 428px) {
     .title {
       font-size: $font-size-title-base * 0.5;
+    }
+    .logo {
+      width: 50px;
     }
   }
 

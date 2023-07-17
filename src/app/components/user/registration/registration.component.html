@@ -1,48 +1,72 @@
 <section class="vh-100 bg-image">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100 form-container">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
+          <div class="card bg-color" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                  <input type="text" placeholder="Choose a nickname" id="name" name="name" formControlName="name" class="form-control form-control-lg" />
+                  <label class="form-label"> Your Username</label>
+                  <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Username field is required.</p>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example3cg">Your Email</label>
+                  <input type="text" placeholder="Insert a valid email" id="email" name="email" formControlName="email" class="form-control form-control-lg" />
+                  <label class="form-label"> Your Email</label>
+                  <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.controls.email.touched">Email field is required.</p>
+                  <p class="help is-danger" *ngIf="form.controls.email.hasError('email') && form.controls.email.touched">Email field must contain a valid email.</p>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cg">Password</label>
+                  <!-- <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg">Password</label> -->
+                  <p-password  class="form-control campoPassword"  formControlName="password"  [toggleMask]="true" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+                  <ng-template pTemplate="header">
+                    <h6>Write a password</h6>
+                  </ng-template>
+                  <ng-template pTemplate="footer">
+                    <p-divider></p-divider>
+                    <p>Suggestions</p>
+                    <ul style="line-height: 1.5;">
+                      <li>at least one lowercase letter</li>
+                      <li>at least one uppercase letter</li>
+                      <li>at least one number</li>
+                      <li>at least 8 characters and max of 18</li>
+                    </ul>
+                  </ng-template>
+                  </p-password>
+
+                  <label class="form-label" for="password">Password</label>
+                  <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern')  && form.controls.password.touched">Password is not safe enough.</p>
+                  <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && form.controls.password.touched && form.controls.password.dirty">Password field is required.</p>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                  <input type="password" id="ripetiPassword" name="ripetiPassword" formControlName="ripetiPassword" class="form-control form-control-lg" />
+                  <label class="form-label" for="ripetiPassword">Repeat your password</label>
+                  <p class="help is-danger" *ngIf="!convalidaPassword() && form.get('ripetiPassword').dirty">The passwords do not match.</p>
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                  <label class="form-check-label" for="form2Example3g">
+                  <input class="form-check-input me-2" type="checkbox" id="accetto" name="accetto" formControlName="accetto" [checked]="form.controls.accetto.value" />
+                  <label class="form-check-label" for="accetto">
                     I agree all statements in <a (click)="open(modalPrivacy)" style="cursor: pointer;"><u>Terms of service</u></a>
                   </label>
+                  <p class="help is-danger" *ngIf="form.controls.accetto.hasError('required') && form.controls.accetto.touched && form.controls.accetto.dirty"></p>
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="!form.valid">Register</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
-                    class="fw-bold text-body"><u>Login here</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0" style="color: white!important;">Have already an account? <a routerLink='login'
+                    class="fw-bold text-body"><u style="color: white!important;">Login here</u></a></p>
 
               </form>
 
@@ -56,17 +80,17 @@
 
 <ng-template #modalPrivacy let-modal>
   <div class="modal-header">
-    <h1>Terms of Service</h1>
+    <h2>Terms of Service</h2>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
   </div>
   <div class="modal-body">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae explicabo animi, odio atque enim vitae? Eius numquam, optio harum quae natus, debitis architecto corporis alias reprehenderit aperiam error vitae facere in libero, modi necessitatibus repudiandae minima esse! Est eius deserunt praesentium sunt error natus perspiciatis eaque sint nam architecto. Iste libero quas et, sapiente rem quam officiis dolor placeat doloremque aliquid molestias nesciunt suscipit vero, magni, pariatur dolorum. Voluptas praesentium dolorem et libero id fuga modi fugit architecto, molestiae sint, ea, repudiandae ipsum atque dignissimos exercitationem quasi velit veniam mollitia laudantium provident quisquam sequi. Odit commodi ad, incidunt non consequatur, perspiciatis, magni deserunt minima quam sapiente corporis vel quae dignissimos quidem sint velit. Minima quaerat doloribus hic ipsum quia modi voluptatibus odit ea molestiae voluptates reprehenderit exercitationem dicta nemo velit itaque deleniti perferendis nobis similique, pariatur ullam aliquid adipisci nostrum! Sed officia magnam voluptate maxime repellendus nulla possimus, reprehenderit, esse explicabo labore architecto quae rerum libero? Fugit quod dolorem natus aut illo omnis incidunt. Quasi et architecto earum quod molestias repudiandae totam cumque minus. Minima, laborum. Qui quae perspiciatis blanditiis accusamus corrupti. Quaerat labore voluptatum sed tenetur harum dignissimos vel aperiam ad rerum repellat in placeat consectetur necessitatibus, obcaecati earum quas fugit assumenda cum praesentium, incidunt pariatur! Sapiente ea, temporibus voluptatibus suscipit est, natus dolore laboriosam debitis quis sunt at, consequatur aperiam possimus repellendus repudiandae magnam optio explicabo necessitatibus quos eveniet! Saepe recusandae ea illum odio dicta consequuntur, fugiat nam provident, debitis perferendis ex quibusdam, labore soluta vel beatae maiores explicabo dolore suscipit sed delectus optio qui at reiciendis? A unde soluta minima. In, nisi! Ratione saepe dolores amet labore asperiores quo rerum totam nesciunt dolor, dicta quibusdam quidem nemo expedita architecto debitis id sequi molestias aliquam itaque? Sapiente sit impedit placeat minima ipsa alias quia inventore dolore asperiores veritatis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae explicabo animi, odio atque enim vitae? Eius numquam, optio harum quae natus, debitis architecto corporis alias reprehenderit aperiam error vitae facere in libero, modi necessitatibus repudiandae minima esse! Est eius deserunt praesentium sunt error natus perspiciatis eaque sint nam architecto. Iste libero quas et, sapiente rem quam officiis dolor placeat doloremque aliquid molestias nesciunt suscipit vero, magni, pariatur dolorum. Voluptas praesentium dolorem et libero id fuga modi fugit architecto, molestiae sint, ea, repudiandae ipsum atque dignissimos exercitationem quasi velit veniam mollitia laudantium provident quisquam sequi. Odit commodi ad, incidunt non consequatur, perspiciatis, magni deserunt minima quam sapiente corporis vel quae dignissimos quidem sint velit. Minima quaerat doloribus hic ipsum quia modi voluptatibus odit ea molestiae voluptates reprehenderit exercitationem dicta nemo velit itaque deleniti perferendis nobis similique, pariatur ullam aliquid adipisci nostrum! Sed officia magnam voluptate maxime repellendus nulla possimus, reprehenderit, esse explicabo labore architecto quae rerum libero? Fugit quod dolorem natus aut illo omnis incidunt. Quasi et architecto earum quod molestias repudiandae totam cumque minus. Minima, laborum. Qui quae perspiciatis blanditiis accusamus corrupti. Quaerat labore voluptatum sed tenetur harum dignissimos vel aperiam ad rerum repellat in placeat consectetur necessitatibus, obcaecati earum quas fugit assumenda cum praesentium, incidunt pariatur!</p>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn" aria-label="cancel" (click)="modal.dismiss()">
       CANCEL</button>
     <button type="button" class="btn btn-primary" aria-label="action" (click)="modal.close()">
-      I HAVE READ THE TERMS
+      ACCEPT
     </button>
   </div>
 </ng-template>

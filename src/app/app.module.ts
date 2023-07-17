@@ -6,8 +6,9 @@ import { DividerModule} from 'primeng/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginatorModule } from 'primeng/paginator';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+import { ToastModule } from 'primeng/toast';
+
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './shared/header/header.component';
@@ -22,6 +23,8 @@ import { DetailComponent } from './components/games/detail/detail.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { NewGameComponent } from './components/new-game/new-game.component';
 import { BorderComponent } from './shared/border/border.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { BorderComponent } from './shared/border/border.component';
     DetailComponent,
     RegistrationComponent,
     NewGameComponent,
-    BorderComponent
+    BorderComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,8 +54,9 @@ import { BorderComponent } from './shared/border/border.component';
     DividerModule,
     PaginatorModule,
     HttpClientModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

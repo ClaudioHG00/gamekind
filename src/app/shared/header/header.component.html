@@ -18,7 +18,7 @@
             <a class="nav-link tab" routerLink="games/new-game" routerLinkActive="active"><i class="pi pi-plus"></i> New Game</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link tab" routerLink="registration" routerlinkActive="active"><i class="pi pi-user" ></i> Sign Up</a>
+            <a class="nav-link tab" (click)="router.navigateByUrl('login')"><i class="pi pi-sign-in"></i> Login</a>
           </li>
         </ul>
       </div>
