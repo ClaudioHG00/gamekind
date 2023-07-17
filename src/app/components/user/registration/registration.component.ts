@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { PrimeNGConfig } from 'primeng/api';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+// import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-registration',
@@ -17,12 +19,15 @@ export class RegistrationComponent {
       (/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/) // Da togliere il gm
     ]),
     ripetiPassword: new FormControl('', Validators.required),
-    accetto: new FormControl(false, Validators.requiredTrue)
+    accetto: new FormControl(false, Validators.requiredTrue),
+    role: new FormControl('user'),
   })
 
   constructor(
     // private config: PrimeNGConfig,
     private modalService: NgbModal,
+    private userService: UserService,
+    private router: Router,
     ) {}
 
   ngOnInit(): void {
@@ -37,6 +42,13 @@ export class RegistrationComponent {
 
   onSubmit(){
     console.log(this.form.value);
+    this.userService.insertUser(this.form.value).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.router.navigateByUrl('login');
+      },
+      error: (e) => console.log(e)
+    })
   }
 
   convalidaPassword(): boolean {

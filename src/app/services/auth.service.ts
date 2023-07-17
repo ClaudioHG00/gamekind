@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { USERS } from '../mock/user.mock';
 import { User } from '../models/user.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   login (email:string, password: string): Observable<User> {
     const user = USERS.find(user => user.email === email && user.password === password);
@@ -31,5 +34,6 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('user');
+    this.router.navigateByUrl('login');
   }
 }

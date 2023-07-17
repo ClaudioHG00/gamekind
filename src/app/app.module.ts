@@ -8,6 +8,7 @@ import { PaginatorModule } from 'primeng/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,6 +26,7 @@ import { NewGameComponent } from './components/new-game/new-game.component';
 import { BorderComponent } from './shared/border/border.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { MessageService } from 'primeng/api';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { MessageService } from 'primeng/api';
     NewGameComponent,
     BorderComponent,
     LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { MessageService } from 'primeng/api';
     PaginatorModule,
     HttpClientModule,
     ToastModule,
+    CKEditorModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

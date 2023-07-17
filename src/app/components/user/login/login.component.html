@@ -13,7 +13,7 @@
 
 
   <div class="row">
-    <button class="btn btn-primary">Sign in</button>
+    <button class="btn btn-primary" [disabled]="!form.valid">Sign in</button>
   </div>
   <div class="alert alert-danger" *ngIf="loginError">
     {{loginError}}
@@ -21,7 +21,7 @@
 </form>
 
 <div id="registrarti">
-  If you're still not registered, <a routerLink="registration"><u>click here</u></a> to sign up.
+  If you're still not registered, <a routerLink="/registration"><u>click here</u></a> to sign up.
 </div>
 </section>
 <p-toast position="bottom-right"></p-toast>

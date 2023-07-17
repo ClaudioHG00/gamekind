@@ -19,4 +19,9 @@ export class GamesService {
     return of (game);
   }
 
+  addGame(form: any): Observable<Game[]> {
+    GAMES.push(form);
+    return of (GAMES);
+  }
+
 }

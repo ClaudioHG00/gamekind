@@ -1,0 +1,46 @@
+@import '../../../styles/fonts.scss';
+
+.foto {
+  width: 100%;
+}
+
+section {
+  width: 50%;
+  margin: 20px auto;
+  font-family: $primary-font-tech;
+  color: white;
+
+  h2 {
+    text-align: center;
+  }
+
+
+  .row {
+    padding-bottom: 10px;
+
+    input {
+      font-family: none;
+      color: black;
+    }
+    .descrizione {
+      font-family: none;
+      color: black;
+    }
+  }
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #28141D;
+  --bs-btn-border-color: #000000;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #28141D;
+  --bs-btn-hover-border-color: #ffffff;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #000000;
+  --bs-btn-active-border-color: #28141D;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-bg: #black;
+  --bs-btn-disabled-border-color: #28141D;
+}

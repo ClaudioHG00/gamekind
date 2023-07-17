@@ -17,6 +17,10 @@ header{
     text-transform: uppercase;
   }
 
+  .login-links {
+    display: flex;
+  }
+
   @media screen and (min-width: 992px){
 
     .navbar-expand-lg .navbar-collapse {

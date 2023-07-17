@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent {
     private auth: AuthService,
     private router: Router,
     private messageService: MessageService,
+    private userService: UserService,
   ){}
 
   onSubmit(form){
@@ -26,7 +28,7 @@ export class LoginComponent {
           if(res) {
             this.auth.saveStorage(res);
 
-            // this.userService.ruoloUtente.next(res.role);
+            this.userService.ruoloUtente.next(res.role);
 
             this.messageService.add({severity: 'success', summary: 'Success', detail: 'Logged in successfully', life: 2000});
             setTimeout(() => {

@@ -14,12 +14,21 @@
           <li class="nav-item">
             <a class="nav-link tab" routerLink="games" routerLinkActive="active"><i class="pi pi-bars"></i> Games</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="ruolo == 'admin' && auth.isLogged()">
             <a class="nav-link tab" routerLink="games/new-game" routerLinkActive="active"><i class="pi pi-plus"></i> New Game</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link tab" (click)="router.navigateByUrl('login')"><i class="pi pi-sign-in"></i> Login</a>
+            <a class="nav-link tab" routerLink="login" routerLinkActive="active" *ngIf="!auth.isLogged()"><i class="pi pi-sign-in"></i> Login</a>
           </li>
+
+          <ul class="login-links" *ngIf="auth.isLogged()">
+            <li class="nav-item">
+              <a class="nav-link tab" routerLink="profile" routerLinkActive="active"><i class="pi pi-user"></i> Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link tab" (click)="auth.logout()" style="cursor: pointer;"><i class="pi pi-sign-out"></i> Logout</a>
+            </li>
+          </ul>
         </ul>
       </div>
     </div>
