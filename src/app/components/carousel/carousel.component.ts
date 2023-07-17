@@ -14,10 +14,10 @@ export class CarouselComponent implements OnInit {
 
   images = [
     {id: 26, label: 'Resident Evil'},
-    {id: 14, label: 'The Elder Scrolls V: Skyrim'},
+    {id: 29, label: 'Persona V'},
+    {id: 31, label: 'Monster Hunter: World'},
     {id: 23, label: 'Outer Wilds'},
     {id: 1, label: 'League of Legends'},
-    {id: 4, label: 'Guild Wars 2'},
     {id: 13, label: 'Horizon Zero Dawn'},
   ];
 
