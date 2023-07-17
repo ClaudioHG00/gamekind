@@ -8,7 +8,8 @@ import { USERS } from '../mock/user.mock';
 })
 export class UserService {
 
-  ruoloUtente = new ReplaySubject();
+  ruoloUtente = new ReplaySubject<string>(1);
+  ruoloUtente$ = this.ruoloUtente.asObservable();
 
   constructor() { }
 
@@ -20,5 +21,9 @@ export class UserService {
   getUser(email: string): Observable<User> {
     const user = USERS.find(user => user.email === email);
     return of (user);
+  }
+
+  updateRuoloUtente(ruolo: string) {
+    this.ruoloUtente.next(ruolo);
   }
 }

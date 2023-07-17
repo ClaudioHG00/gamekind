@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 // import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -28,6 +29,7 @@ export class RegistrationComponent {
     private modalService: NgbModal,
     private userService: UserService,
     private router: Router,
+    private messageService: MessageService,
     ) {}
 
   ngOnInit(): void {
@@ -45,9 +47,15 @@ export class RegistrationComponent {
     this.userService.insertUser(this.form.value).subscribe({
       next: (res) => {
         console.log(res);
-        this.router.navigateByUrl('login');
+        this.messageService.add({severity: 'success', summary: 'Success', detail: 'You are now registered', life: 3000});
+        setTimeout(() => {
+          this.router.navigateByUrl('login');
+        }, 3000);
       },
-      error: (e) => console.log(e)
+      error: (e) => {
+        console.log(e);
+        this.messageService.add({severity: 'error', summary: 'Error', detail: 'Something went wrong with the registration.', life: 3000});
+      }
     })
   }
 

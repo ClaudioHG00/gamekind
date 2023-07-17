@@ -5,6 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Game } from 'src/app/models/game.model';
 import { GamesService } from 'src/app/services/games.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-new-game',
@@ -68,6 +69,7 @@ export class NewGameComponent {
     private gamesService: GamesService,
     private modalService: NgbModal,
     private router: Router,
+    private messageService: MessageService,
     ){}
 
   onSubmit(){
@@ -86,10 +88,12 @@ export class NewGameComponent {
       this.gamesService.addGame(this.form.value).subscribe({
         next: (res) => {
           console.log(res);
+          this.messageService.add({severity: 'success', summary: 'Success', detail: 'Game added successfully.', life: 4000});
           this.open(this.modale);
         },
         error: (e) => {
           console.log(e)
+          this.messageService.add({severity: 'error', summary: 'Error', detail: 'Something went wrong while adding the game', life: 4000});
         }
       })
     }

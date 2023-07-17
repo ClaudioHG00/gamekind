@@ -9,24 +9,24 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link tab" routerLink="home" routerLinkActive="active"><i class="pi pi-home"></i> Home</a>
+            <a class="nav-link tab" routerLink="home" routerLinkActive="active" matRipple [matRippleCentered]="true" [matRippleRadius]="50" [matRippleUnbounded]="true" matRippleColor="#08070857"><i class="pi pi-home"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link tab" routerLink="games" routerLinkActive="active"><i class="pi pi-bars"></i> Games</a>
+            <a class="nav-link tab" routerLink="games" routerLinkActive="active" matRipple [matRippleCentered]="true" [matRippleRadius]="50" [matRippleUnbounded]="true" matRippleColor="#08070857"><i class="pi pi-bars"></i> Games</a>
           </li>
-          <li class="nav-item" *ngIf="ruolo == 'admin' && auth.isLogged()">
-            <a class="nav-link tab" routerLink="games/new-game" routerLinkActive="active"><i class="pi pi-plus"></i> New Game</a>
+          <li class="nav-item" *ngIf="ruoloUtente == 'admin' && auth.isLogged()">
+            <a class="nav-link tab" routerLink="games/new-game" routerLinkActive="active" matRipple [matRippleCentered]="true" [matRippleRadius]="50" [matRippleUnbounded]="true" matRippleColor="#08070857"><i class="pi pi-plus"></i> New Game</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link tab" routerLink="login" routerLinkActive="active" *ngIf="!auth.isLogged()"><i class="pi pi-sign-in"></i> Login</a>
+            <a class="nav-link tab" routerLink="login" routerLinkActive="active" *ngIf="!auth.isLogged()" matRipple [matRippleCentered]="true" [matRippleRadius]="50" [matRippleUnbounded]="true" matRippleColor="#08070857"><i class="pi pi-sign-in"></i> Login</a>
           </li>
 
           <ul class="login-links" *ngIf="auth.isLogged()">
-            <li class="nav-item">
-              <a class="nav-link tab" routerLink="profile" routerLinkActive="active"><i class="pi pi-user"></i> Profile</a>
+            <li class="nav-item" style="margin-right: 15px;">
+              <a class="nav-link tab" routerLink="profile" routerLinkActive="active" matRipple [matRippleCentered]="true" [matRippleRadius]="50" [matRippleUnbounded]="true" matRippleColor="#08070857"><i class="pi pi-user"></i> Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link tab" (click)="auth.logout()" style="cursor: pointer;"><i class="pi pi-sign-out"></i> Logout</a>
+              <a class="nav-link tab" (click)="auth.logout()" style="cursor: pointer;" matRipple [matRippleCentered]="true" [matRippleRadius]="50" [matRippleUnbounded]="true" matRippleColor="#08070857"><i class="pi pi-sign-out"></i> Logout</a>
             </li>
           </ul>
         </ul>

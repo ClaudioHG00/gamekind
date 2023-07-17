@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "./node_modules/primeng/resources/themes/saga-blue/theme.css",
@@ -100,6 +101,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "./node_modules/primeng/resources/themes/saga-blue/theme.css",

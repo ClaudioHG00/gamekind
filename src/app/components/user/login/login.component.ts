@@ -28,7 +28,7 @@ export class LoginComponent {
           if(res) {
             this.auth.saveStorage(res);
 
-            this.userService.ruoloUtente.next(res.role);
+            this.userService.updateRuoloUtente(res.role);
 
             this.messageService.add({severity: 'success', summary: 'Success', detail: 'Logged in successfully', life: 2000});
             setTimeout(() => {

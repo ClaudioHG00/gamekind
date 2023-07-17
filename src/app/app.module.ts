@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ToastModule } from 'primeng/toast';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { MaterialCompModule } from 'src/material.module';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -59,6 +60,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
     HttpClientModule,
     ToastModule,
     CKEditorModule,
+    MaterialCompModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

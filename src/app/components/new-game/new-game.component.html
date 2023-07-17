@@ -42,7 +42,7 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
   </div>
   <div class="modal-body">
-    <h2>New game added</h2>
+    <h2>Summary of the new added game</h2>
     <img [src]="game.image" class="foto">
     <ul>
       <li>{{game._id}}</li>
@@ -58,3 +58,5 @@
     <button type="button" class="btn btn-primary" aria-label="action" (click)="modal.close()">ADD A NEW GAME</button>
   </div>
 </ng-template>
+
+<p-toast position="bottom-right"></p-toast>

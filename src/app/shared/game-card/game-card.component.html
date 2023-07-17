@@ -17,8 +17,8 @@
 </div>
 
 <div *ngIf="pagina === 'home'">
-  <!-- <h2>Last Added Games</h2> -->
-    <div class="container-card" *ngFor="let game of games | slice: -3">
+  <h2>Most recent games</h2>
+    <div class="container-card2" *ngFor="let game of games | slice: -3">
       <div class="card">
         <div class="card-image" [ngStyle]="{'background-image': 'url(' + game.image + ')'}"></div>
         <div class="card-body">
